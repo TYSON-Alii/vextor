@@ -1,7 +1,7 @@
 template <typename _t>
 class vextor {
 private:
-	volatile size_t _size = 0;
+	size_t _size = 0;
 	_t* elem = new _t[0];
 public:
 	vextor(size_t _v) {
