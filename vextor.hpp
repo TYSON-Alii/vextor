@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <string>
 
 template <typename T>
 class vextor : public std::vector<T> {
@@ -56,6 +53,16 @@ public:
         return t;
     };
     inline vextor<T> operator()() const { return *this; };
+    template <typename _T>
+    inline vextor<T>& operator()(_T _for_each) {
+        auto b = begin();
+        const auto& e = end();
+        while (b != e) {
+            _for_each(*b);
+            b++;
+        };
+        return *this;
+    };
 };
 
 template <typename T>
